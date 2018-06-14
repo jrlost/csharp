@@ -9,13 +9,13 @@
     <PackageIconUrl>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</PackageIconUrl>
     <PackageTags>kubernetes;docker;containers;</PackageTags>
 
-    <TargetFrameworks>netstandard1.4;net452;netcoreapp2.1</TargetFrameworks>
-    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard1.4;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;net452;netcoreapp2</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard1.4;netcoreapp2</TargetFrameworks>
     <RootNamespace>k8s</RootNamespace>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>kubernetes-client.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;1591;1570;1572;1573;1574</NoWarn>
+
+    <NuspecFile>KubernetesClient.nuspec</NuspecFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.10" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
-    <PackageReference Include="YamlDotNet.Signed" Version="4.2.3" />
+    <PackageReference Include="YamlDotNet" Version="4.2.3" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
       <Reference Include="System.Net.Http.WebRequest" />

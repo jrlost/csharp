@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <RootNamespace>k8s.tests</RootNamespace>
-    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,9 +14,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
       <Compile Remove="Kubernetes.Exec.Tests.cs" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
-      <Compile Remove="Kubernetes.WebSockets.Tests.cs" />
   </ItemGroup>
 
   <ItemGroup>
